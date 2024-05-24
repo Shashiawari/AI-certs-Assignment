@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: god;
+  src: url(./fonts/GodshineSans.ttf);
+}
+
+@font-face {
+  font-family: kiona;
+  src: url(./fonts/Kiona-Regular.ttf);
+}
+
+@font-face {
+  font-family: mai;
+  src: url(./fonts/maiden.ttf);
+}
+
+@font-face {
+  font-family: modern;
+  src: url(./fonts/ModernSans-Light.otf);
+}
+
+nav {
+  margin-top: 0;
+  font-weight: 900;
+  font-family: kiona;
+  color: white;
+  font-size: 30px;
+  box-shadow: 2px 2px 12px 2px black;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(245, 209, 4);
+}
+
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.note h1 {
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+.note h2{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
+
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form input,
+form textarea {
+  width: 80%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-family: modern;
+  margin: 20px;
+  font-size: 1.2em;
+  resize: none;
+}
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 66px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 20px;
+  outline: none;
+}
+label{
+  font-family: modern;
+  text-transform: uppercase;
+  margin: 20px;
+}
+#status{
+  font-family: modern;
+  text-transform: capitalize;
+  padding: 4px;
+  border-radius: 15px;
+  margin: 20px;
+  display: flex;
+  border: 2px solid;
+  flex-direction: column;
+}
+
+#start{
+  text-transform: uppercase;
+  font-family: modern;
+  margin: 20px;
+}
+
+::placeholder{
+  color: #f5ba13;
+}
