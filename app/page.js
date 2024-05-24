@@ -21,7 +21,7 @@ export default function Home() {
           },
         });
         const data = await res.json();
-        setNotes(data.result); // Assuming the API response has a 'result' field containing the notes
+        setNotes(data.result); 
       } catch (error) {
         console.error("Error fetching notes:", error);
       }
@@ -40,7 +40,6 @@ export default function Home() {
       body: JSON.stringify({ title, status, duedate, content }),
     });
     if (res.ok) {
-      // If the request was successful, fetch the updated list of notes
       const updatedRes = await fetch("api/tasks", {
         method: "GET",
         headers: {

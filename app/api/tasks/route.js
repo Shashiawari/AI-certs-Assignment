@@ -3,7 +3,6 @@ import { MongoClient} from "mongodb";
 import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-// GET endpoint to fetch tasks
 export async function GET() {
   const uri = process.env.MONGODB_URI;
   const client = new MongoClient(uri);
@@ -23,7 +22,6 @@ export async function GET() {
   }
 }
 
-// POST endpoint to add a new task
 export async function POST(req, res) {
   const uri = process.env.MONGODB_URI;
   const client = new MongoClient(uri);
@@ -45,7 +43,6 @@ export async function POST(req, res) {
   }
 }
 
-// DELETE endpoint to delete a task
 export async function DELETE(request) {
   const uri = process.env.MONGODB_URI;
   const client = new MongoClient(uri);
@@ -55,7 +52,6 @@ export async function DELETE(request) {
     const db = client.db();
     const collection = db.collection("tasks");
 
-    // Get the task ID from the request query parameters
     const searchParams = request.nextUrl.searchParams;
     const taskId = searchParams.get('id');
 
@@ -85,20 +81,16 @@ export async function PUT(request) {
       const db = client.db();
       const collection = db.collection("tasks");
   
-      // Get the task ID from the request query parameters
       const searchParams = request.nextUrl.searchParams;
       const taskId = searchParams.get('id');
   
-      // Extract the updated task details from the request body
       const { title, status, duedate, content } = await request.json();
   
-      // Perform the update operation
       const result = await collection.updateOne(
         { _id: new ObjectId(taskId) },
         { $set: { title, status, duedate, content } }
       );
   
-      // Check if the update was successful
       if (result.modifiedCount === 1) {
         return NextResponse.json({
           success: true,
